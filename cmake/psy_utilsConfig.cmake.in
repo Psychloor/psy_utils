@@ -1,0 +1,16 @@
+﻿@PACKAGE_INIT@
+
+# Exported targets for this package
+include("${CMAKE_CURRENT_LIST_DIR}/utilsTargets.cmake")
+
+# Package metadata
+set(utils_VERSION "@PROJECT_VERSION@")
+
+# Convenience variables for consumers
+# Prefer using the imported target utils::utils instead of these variables.
+include(GNUInstallDirs OPTIONAL RESULT_VARIABLE _gnu_dirs_included)
+set(utils_INCLUDE_DIRS "${PACKAGE_PREFIX_DIR}/@CMAKE_INSTALL_INCLUDEDIR@")
+
+# If you add dependencies, uncomment the following and call find_dependency(...)
+# include(CMakeFindDependencyMacro)
+# find_dependency(SomePackage REQUIRED)
